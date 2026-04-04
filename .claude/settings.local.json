@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bash:*)",
+      "Bash(npm install:*)",
+      "Bash(npm list:*)",
+      "Bash(npm run:*)",
+      "Bash(cp -r \"C:/Users/carli/OneDrive/Escritorio/web_leo\" \"C:/Users/carli/OneDrive/Escritorio/webs_clientes/3triple-creo\")",
+      "Read(//c/Users/carli/OneDrive/Escritorio/webs_clientes/**)"
+    ]
+  },
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true
+  }
+}

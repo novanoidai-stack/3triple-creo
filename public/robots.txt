@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://blendz-leo.com/sitemap.xml
