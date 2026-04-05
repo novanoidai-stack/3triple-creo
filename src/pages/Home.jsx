@@ -120,6 +120,81 @@ export default function Home() {
         {/* Particles full hero */}
         <ParticleField density="medium" />
 
+        {/* Fotos de cortes reales — decoración lateral */}
+        <div style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', overflow: 'hidden' }}>
+          {/* Foto derecha arriba */}
+          <motion.div
+            initial={{ opacity: 0, x: 60, rotate: 6 }}
+            animate={{ opacity: 1, x: 0, rotate: 4 }}
+            transition={{ duration: 1.4, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            style={{
+              position: 'absolute',
+              top: '12%',
+              right: '-2%',
+              width: 'clamp(140px, 16vw, 220px)',
+              aspectRatio: '4/5',
+              borderRadius: '4px',
+              overflow: 'hidden',
+              border: '1px solid rgba(255,182,193,0.15)',
+              boxShadow: '0 20px 60px rgba(0,0,0,0.5)',
+            }}
+          >
+            <img src="/assets/images/WhatsApp Image 2026-04-05 at 16.16.04 (1).jpeg"
+              alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', filter: 'grayscale(30%) contrast(1.05)', opacity: 0.7 }} />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 40%, rgba(5,5,5,0.6))' }} />
+          </motion.div>
+
+          {/* Foto derecha abajo */}
+          <motion.div
+            initial={{ opacity: 0, x: 40, rotate: -3 }}
+            animate={{ opacity: 1, x: 0, rotate: -5 }}
+            transition={{ duration: 1.4, delay: 1.0, ease: [0.22, 1, 0.36, 1] }}
+            style={{
+              position: 'absolute',
+              bottom: '14%',
+              right: '5%',
+              width: 'clamp(110px, 12vw, 170px)',
+              aspectRatio: '4/5',
+              borderRadius: '4px',
+              overflow: 'hidden',
+              border: '1px solid rgba(255,182,193,0.1)',
+              boxShadow: '0 20px 60px rgba(0,0,0,0.5)',
+            }}
+          >
+            <img src="/assets/images/WhatsApp Image 2026-04-05 at 16.16.04 (2).jpeg"
+              alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', filter: 'grayscale(30%) contrast(1.05)', opacity: 0.6 }} />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 40%, rgba(5,5,5,0.6))' }} />
+          </motion.div>
+
+          {/* Foto izquierda */}
+          <motion.div
+            initial={{ opacity: 0, x: -40, rotate: 3 }}
+            animate={{ opacity: 1, x: 0, rotate: 5 }}
+            transition={{ duration: 1.4, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
+            style={{
+              position: 'absolute',
+              bottom: '18%',
+              left: '-1%',
+              width: 'clamp(100px, 11vw, 155px)',
+              aspectRatio: '4/5',
+              borderRadius: '4px',
+              overflow: 'hidden',
+              border: '1px solid rgba(255,182,193,0.1)',
+              boxShadow: '0 20px 60px rgba(0,0,0,0.5)',
+            }}
+          >
+            <img src="/assets/images/WhatsApp Image 2026-04-01 at 20.33.26.jpeg"
+              alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', filter: 'grayscale(30%) contrast(1.05)', opacity: 0.55 }} />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 40%, rgba(5,5,5,0.6))' }} />
+          </motion.div>
+        </div>
+
+        <style>{`
+          @media (max-width: 768px) {
+            .hero-deco { display: none !important; }
+          }
+        `}</style>
+
         {/* Content — centrado */}
         <div style={{
           width: '100%',
@@ -271,18 +346,33 @@ export default function Home() {
             animate="visible"
             style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' }}
           >
-            <button
+            <motion.button
               className="btn-primary"
               onClick={() => navigate('/contacto')}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+              style={{
+                fontSize: '0.9rem',
+                padding: '1.2rem 3rem',
+                letterSpacing: '3px',
+                boxShadow: '0 0 30px rgba(255,107,157,0.35), 0 0 60px rgba(255,107,157,0.15)',
+                animation: 'heroBtnPulse 3s ease-in-out infinite',
+              }}
             >
               Reservar Cita →
-            </button>
+            </motion.button>
             <button
               className="btn-ghost"
               onClick={() => navigate('/portafolio')}
             >
               Ver Trabajos
             </button>
+            <style>{`
+              @keyframes heroBtnPulse {
+                0%, 100% { box-shadow: 0 0 30px rgba(255,107,157,0.35), 0 0 60px rgba(255,107,157,0.15); }
+                50% { box-shadow: 0 0 45px rgba(255,107,157,0.6), 0 0 90px rgba(255,107,157,0.25); }
+              }
+            `}</style>
           </motion.div>
         </div>
 

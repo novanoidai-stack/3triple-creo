@@ -5,7 +5,7 @@ export default function IntroScreen() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const seen = sessionStorage.getItem('3tc_intro');
+    const seen = sessionStorage.getItem('3plel_v3');
     if (!seen) setShow(true);
   }, []);
 
@@ -20,7 +20,7 @@ export default function IntroScreen() {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.6, delay: 2.4 }}
         onAnimationComplete={() => {
-          sessionStorage.setItem('3tc_intro', '1');
+          sessionStorage.setItem('3plel_v3', '1');
           setShow(false);
         }}
         style={{
@@ -45,9 +45,10 @@ export default function IntroScreen() {
             src="/assets/images/WhatsApp Image 2026-04-01 at 20.30.03.jpeg"
             alt="3pleL"
             style={{
-              height: 'clamp(120px, 22vw, 200px)',
+              height: 'clamp(140px, 26vw, 240px)',
               objectFit: 'contain',
-              filter: 'brightness(1.05)',
+              mixBlendMode: 'screen',
+              filter: 'brightness(1.15) contrast(1.1)',
             }}
           />
         </motion.div>
