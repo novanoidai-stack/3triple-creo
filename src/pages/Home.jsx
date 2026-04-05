@@ -9,8 +9,6 @@ import SEO from '../components/SEO';
 import PageTransition from '../components/PageTransition';
 import ParticleField from '../components/ParticleField';
 import TheExperience from '../components/TheExperience';
-import Testimonials from '../components/Testimonials';
-
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
@@ -123,7 +121,7 @@ export default function Home() {
         <ParticleField density="medium" />
 
         {/* Content */}
-        <div style={{ maxWidth: '900px', position: 'relative', zIndex: 10 }}>
+        <div style={{ maxWidth: '900px', position: 'relative', zIndex: 10, paddingBottom: '6rem' }}>
 
           {/* Tag */}
           <motion.div
@@ -147,45 +145,34 @@ export default function Home() {
             </span>
           </motion.div>
 
-          {/* Title */}
-          <motion.div variants={fadeUp} custom={0.25} initial="hidden" animate="visible">
-            <h1 style={{
-              fontFamily: "'Playfair Display', serif",
-              fontSize: 'clamp(4.5rem, 11vw, 10rem)',
-              lineHeight: 0.92,
-              fontWeight: 400,
+          {/* Logo principal */}
+          <motion.div variants={fadeUp} custom={0.15} initial="hidden" animate="visible"
+            style={{ marginBottom: '1.5rem' }}>
+            <img
+              src="/assets/images/WhatsApp Image 2026-04-01 at 20.30.03.jpeg"
+              alt="3pleL — Barbería de Autor Madrid"
+              style={{ height: '90px', objectFit: 'contain', filter: 'brightness(1.1)' }}
+            />
+          </motion.div>
+
+          {/* Eslogan secundario */}
+          <motion.div variants={fadeUp} custom={0.28} initial="hidden" animate="visible">
+            <p style={{
+              fontFamily: "'Oswald', sans-serif",
+              fontSize: 'clamp(0.85rem, 2vw, 1.1rem)',
+              letterSpacing: '6px',
+              textTransform: 'uppercase',
+              color: 'rgba(255,255,255,0.45)',
               marginBottom: '2.5rem',
-              textTransform: 'none',
             }}>
-              <span style={{ display: 'block', color: '#ffffff' }}>Arte</span>
-              <span style={{
-                display: 'block',
-                color: '#ffb6c1',
-                fontStyle: 'italic',
-                textShadow: '0 0 80px rgba(255,107,157,0.25)',
-              }}>
-                & Precisión
-              </span>
-              <span style={{
-                display: 'block',
-                color: 'rgba(255,255,255,0.85)',
-                fontSize: '0.28em',
-                fontWeight: 700,
-                fontStyle: 'normal',
-                fontFamily: "'Oswald', sans-serif",
-                letterSpacing: '8px',
-                textTransform: 'uppercase',
-                marginTop: '1rem',
-              }}>
-                Blendz Leo Studio
-              </span>
-            </h1>
+              Estilo y precisión
+            </p>
           </motion.div>
 
           {/* Subtitle */}
           <motion.p
             variants={fadeUp}
-            custom={0.45}
+            custom={0.42}
             initial="hidden"
             animate="visible"
             style={{
@@ -197,9 +184,10 @@ export default function Home() {
               marginBottom: '3rem',
             }}
           >
-            Maestría en <strong style={{ color: '#ffffff', fontWeight: 600 }}>Skin Fade</strong>, diseño
-            de barba y visagismo exclusivo. El estudio donde tu imagen se convierte en{' '}
-            <strong style={{ color: '#ffffff', fontWeight: 600 }}>obra de autor</strong>.
+            Maestría en{' '}
+            <strong style={{ color: '#ffffff', fontWeight: 600 }}>Fade, diseño de barba y afro</strong>.
+            {' '}El estudio donde tu imagen se convierte en{' '}
+            <strong style={{ color: '#ffffff', fontWeight: 600 }}>una obra de autor</strong>.
           </motion.p>
 
           {/* Promo badge */}
@@ -263,7 +251,9 @@ export default function Home() {
           display: 'flex',
           alignItems: 'center',
           gap: '1rem',
-          zIndex: 10,
+          zIndex: 20,
+          pointerEvents: 'none',
+          whiteSpace: 'nowrap',
         }}>
           <div className="animate-scroll-indicator" style={{
             width: '60px',
@@ -295,7 +285,7 @@ export default function Home() {
         {[
           { value: 500, suffix: '+', label: 'Clientes Satisfechos', isCount: true },
           { value: '5.0', prefix: '★ ', label: 'Valoración Media', isCount: false },
-          { value: 'Cum Laude', label: 'Blend School Cert.', isCount: false },
+          { value: 'Formación', label: 'Blend School Cert.', isCount: false },
           { value: 'Madrid', label: 'Hortaleza · Motilla 33', isCount: false },
         ].map((stat, i) => (
           <div key={i} style={{ textAlign: 'center' }}>
@@ -330,9 +320,6 @@ export default function Home() {
 
       {/* ══════════════════════════════════════ EXPERIENCE */}
       <TheExperience />
-
-      {/* ══════════════════════════════════════ TESTIMONIALS */}
-      <Testimonials />
 
       {/* ══════════════════════════════════════ CTA */}
       <section style={{

@@ -9,17 +9,17 @@ const steps = [
   {
     number: '01',
     title: 'El Diagnóstico',
-    desc: 'Análisis exhaustivo de tu fisionomía craneal, tipo de cabello y crecimiento capilar. No es un corte al azar, es un estudio de visagismo aplicado.',
+    desc: 'Análisis del visagismo y tipo de pelo para encajar tu corte. Estudiamos tu estructura antes de tocar nada — porque cada cabeza es distinta.',
   },
   {
     number: '02',
     title: 'La Ejecución',
-    desc: 'Tratamiento milimétrico donde la máquina se vuelve extensión matemática. Transiciones invisibles en Skin Fade y perfilado arquitectónico de barba.',
+    desc: 'Trabajo con precisión el estilo de corte deseado, con perfilados y pulidos trabajados al detalle. Fade, afro, barba: cada línea tiene un propósito.',
   },
   {
     number: '03',
     title: 'El Acabado',
-    desc: 'Sellado del estilo con productos premium, lavado terapéutico y asesoría personalizada para mantener el look hasta la próxima visita.',
+    desc: 'Acabado de calidad con productos premium de la gama de Octyl. El toque final que sella el estilo con identidad propia.',
   },
 ];
 
@@ -68,7 +68,7 @@ export default function TheExperience() {
           </p>
           <h2 className="section-title">
             Más que un corte,<br />
-            <span style={{ fontStyle: 'italic', color: '#ffb6c1' }}>un ritual de autor</span>
+            <span style={{ fontStyle: 'italic', color: '#ffb6c1' }}>una experiencia</span>
           </h2>
         </div>
 
@@ -191,7 +191,7 @@ export default function TheExperience() {
               textTransform: 'uppercase',
               boxShadow: '0 5px 20px rgba(204,164,59,0.35)',
             }}>
-              CUM LAUDE
+              FORMACIÓN
             </div>
 
             {/* Pink glow bottom-left */}
