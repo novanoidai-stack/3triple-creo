@@ -3,6 +3,15 @@ import PageTransition from '../components/PageTransition';
 import SEO from '../components/SEO';
 
 const haircuts = [
+  "WhatsApp Image 2026-04-05 at 16.02.03.jpeg",
+  "WhatsApp Image 2026-04-05 at 16.02.03 (1).jpeg",
+  "WhatsApp Image 2026-04-05 at 16.02.03 (2).jpeg",
+  "WhatsApp Image 2026-04-05 at 16.02.03 (3).jpeg",
+  "WhatsApp Image 2026-04-05 at 16.02.03 (4).jpeg",
+  "WhatsApp Image 2026-04-05 at 16.16.04.jpeg",
+  "WhatsApp Image 2026-04-05 at 16.16.04 (1).jpeg",
+  "WhatsApp Image 2026-04-05 at 16.16.04 (2).jpeg",
+  "WhatsApp Image 2026-04-05 at 16.16.04 (3).jpeg",
   "WhatsApp Image 2026-04-01 at 20.33.26.jpeg",
   "WhatsApp Image 2026-04-01 at 20.33.26 (1).jpeg",
   "WhatsApp Image 2026-04-01 at 20.33.26 (2).jpeg",
