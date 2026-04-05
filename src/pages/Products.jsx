@@ -1,21 +1,9 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import emailjs from '@emailjs/browser';
 import SEO from '../components/SEO';
 import PageTransition from '../components/PageTransition';
 
-// ─── EmailJS config ───────────────────────────────────────────────────────────
-// 1. Entra en https://www.emailjs.com/ y crea una cuenta gratuita
-// 2. Crea un servicio de email (conecta Gmail: leollorente347@gmail.com)
-// 3. Crea una plantilla con las variables: {{from_name}}, {{from_contact}}, {{order_items}}, {{order_total}}
-// 4. Sustituye los valores de abajo con los tuyos
-const EMAILJS_SERVICE_ID  = 'service_3plel';       // reemplaza con tu Service ID
-const EMAILJS_TEMPLATE_ID = 'template_pedido';     // reemplaza con tu Template ID
-const EMAILJS_PUBLIC_KEY  = 'TU_PUBLIC_KEY_AQUI';  // reemplaza con tu Public Key
-// ─────────────────────────────────────────────────────────────────────────────
-// Para testear: cambia TO_EMAIL a 'novanoidai@gmail.com'
-// Para producción: cambia TO_EMAIL a 'leollorente347@gmail.com'
-const TO_EMAIL = 'novanoidai@gmail.com';
+const WHATSAPP_NUMBER = '34623433448';
 
 const PRICE = 13.2;
 
@@ -102,40 +90,16 @@ const products = [
 
 const categories = ['Todos', ...Array.from(new Set(products.map((p) => p.category)))];
 
-function CartDrawer({ cart, onClose, onRemove, onQtyChange }) {
-  const [name, setName] = useState('');
-  const [contact, setContact] = useState('');
-  const [status, setStatus] = useState('idle'); // idle | sending | ok | error
-
+function CartDrawer({ cart, onClose, onQtyChange }) {
   const total = cart.reduce((sum, item) => sum + item.qty * PRICE, 0);
   const itemCount = cart.reduce((sum, item) => sum + item.qty, 0);
 
-  const handleSend = async () => {
-    if (!name.trim() || !contact.trim()) return;
-    setStatus('sending');
-
-    const orderLines = cart
-      .map((item) => `• ${item.name} × ${item.qty} = ${(item.qty * PRICE).toFixed(2)}€`)
-      .join('\n');
-
-    try {
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          to_email: TO_EMAIL,
-          from_name: name,
-          from_contact: contact,
-          order_items: orderLines,
-          order_total: `${total.toFixed(2)}€`,
-        },
-        EMAILJS_PUBLIC_KEY,
-      );
-      setStatus('ok');
-    } catch (err) {
-      console.error('EmailJS error:', err);
-      setStatus('error');
-    }
+  const handleWhatsApp = () => {
+    const lines = cart
+      .map((item) => `• ${item.name} ×${item.qty}`)
+      .join('%0A');
+    const msg = `Hola Leo 👋 quiero comprar:%0A${lines}%0A%0ATotal: ${total.toFixed(2)}€`;
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, '_blank');
   };
 
   return (
@@ -261,13 +225,12 @@ function CartDrawer({ cart, onClose, onRemove, onQtyChange }) {
           borderTop: '1px solid rgba(255,182,193,0.08)',
           display: 'flex',
           flexDirection: 'column',
-          gap: '0.9rem',
+          gap: '1rem',
         }}>
           <div style={{
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
-            marginBottom: '0.5rem',
           }}>
             <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: '0.7rem', letterSpacing: '3px', textTransform: 'uppercase', color: 'rgba(255,255,255,0.45)' }}>
               Total
@@ -277,50 +240,37 @@ function CartDrawer({ cart, onClose, onRemove, onQtyChange }) {
             </span>
           </div>
 
-          {status !== 'ok' ? (
-            <>
-              <input
-                type="text"
-                placeholder="Tu nombre"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                style={inputStyle}
-              />
-              <input
-                type="text"
-                placeholder="WhatsApp o email"
-                value={contact}
-                onChange={(e) => setContact(e.target.value)}
-                style={inputStyle}
-              />
-              <button
-                onClick={handleSend}
-                disabled={!name.trim() || !contact.trim() || status === 'sending'}
-                className="btn-primary"
-                style={{ width: '100%', opacity: (!name.trim() || !contact.trim()) ? 0.5 : 1 }}
-              >
-                {status === 'sending' ? 'Enviando...' : 'Solicitar pedido'}
-              </button>
-              {status === 'error' && (
-                <p style={{ color: '#ff6b6b', fontFamily: "'Outfit', sans-serif", fontSize: '0.8rem', textAlign: 'center' }}>
-                  Error al enviar. Escríbenos por WhatsApp.
-                </p>
-              )}
-              <p style={{ color: 'rgba(255,255,255,0.25)', fontFamily: "'Outfit', sans-serif", fontSize: '0.72rem', textAlign: 'center', lineHeight: 1.5 }}>
-                Leo confirmará tu pedido y te lo entrega en tu próxima cita.
-              </p>
-            </>
-          ) : (
-            <div style={{ textAlign: 'center', padding: '1rem 0' }}>
-              <p style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>✓</p>
-              <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.1rem', color: '#ffb6c1', marginBottom: '0.5rem' }}>
-                ¡Pedido recibido!
-              </p>
-              <p style={{ color: 'rgba(255,255,255,0.4)', fontFamily: "'Outfit', sans-serif", fontSize: '0.85rem' }}>
-                Leo se pondrá en contacto contigo pronto.
-              </p>
-            </div>
-          )}
+          <motion.button
+            whileTap={{ scale: 0.97 }}
+            onClick={handleWhatsApp}
+            style={{
+              width: '100%',
+              background: '#25D366',
+              border: 'none',
+              borderRadius: '4px',
+              padding: '1rem',
+              fontFamily: "'Oswald', sans-serif",
+              fontSize: '0.8rem',
+              letterSpacing: '2px',
+              textTransform: 'uppercase',
+              color: '#fff',
+              fontWeight: 700,
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '0.6rem',
+            }}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Enviar pedido por WhatsApp
+          </motion.button>
+
+          <p style={{ color: 'rgba(255,255,255,0.25)', fontFamily: "'Outfit', sans-serif", fontSize: '0.72rem', textAlign: 'center', lineHeight: 1.5 }}>
+            Leo confirmará tu pedido y te lo entrega en tu próxima cita.
+          </p>
         </div>
       )}
     </motion.div>
@@ -341,18 +291,6 @@ const qtyBtnStyle = {
   justifyContent: 'center',
 };
 
-const inputStyle = {
-  background: 'rgba(255,255,255,0.04)',
-  border: '1px solid rgba(255,182,193,0.15)',
-  borderRadius: '4px',
-  padding: '0.8rem 1rem',
-  color: '#fff',
-  fontFamily: "'Outfit', sans-serif",
-  fontSize: '0.9rem',
-  outline: 'none',
-  width: '100%',
-  boxSizing: 'border-box',
-};
 
 export default function Products() {
   const [cart, setCart] = useState([]);
@@ -372,8 +310,6 @@ export default function Products() {
     setAddedId(product.id);
     setTimeout(() => setAddedId(null), 1200);
   };
-
-  const removeItem = (id) => setCart((prev) => prev.filter((i) => i.id !== id));
 
   const changeQty = (id, qty) => {
     if (qty <= 0) return removeItem(id);
@@ -654,7 +590,6 @@ export default function Products() {
             <CartDrawer
               cart={cart}
               onClose={() => setCartOpen(false)}
-              onRemove={removeItem}
               onQtyChange={changeQty}
             />
           </>
