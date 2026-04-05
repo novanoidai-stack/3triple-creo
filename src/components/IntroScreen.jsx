@@ -31,33 +31,50 @@ export default function IntroScreen() {
           alignItems: 'center',
           justifyContent: 'center',
           zIndex: 9999,
+          flexDirection: 'column',
+          gap: '0.75rem',
         }}
       >
-        {/* Glow de fondo */}
-        <div style={{
-          position: 'absolute',
-          inset: 0,
-          background: 'radial-gradient(ellipse at 50% 50%, rgba(255,107,157,0.07) 0%, transparent 65%)',
-          pointerEvents: 'none',
-        }} />
-
         {/* Logo */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.85 }}
+          initial={{ opacity: 0, scale: 0.88 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          style={{ position: 'relative', zIndex: 1 }}
+          transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
         >
           <img
             src="/assets/images/WhatsApp Image 2026-04-01 at 20.30.03.jpeg"
             alt="3pleL"
             style={{
-              height: 'clamp(260px, 50vw, 420px)',
+              height: 'clamp(200px, 38vw, 340px)',
               objectFit: 'contain',
               filter: 'brightness(1.05)',
             }}
           />
         </motion.div>
+
+        {/* Línea divisora */}
+        <motion.div
+          initial={{ width: 0 }}
+          animate={{ width: '60px' }}
+          transition={{ duration: 0.7, delay: 0.7 }}
+          style={{ height: '1px', background: '#ffb6c1' }}
+        />
+
+        {/* Subtítulo */}
+        <motion.p
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 0.5, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.1 }}
+          style={{
+            fontFamily: "'Oswald', sans-serif",
+            fontSize: '0.6rem',
+            letterSpacing: '5px',
+            textTransform: 'uppercase',
+            color: '#ffb6c1',
+          }}
+        >
+          Barbería de Autor · Madrid
+        </motion.p>
       </motion.div>
     </AnimatePresence>
   );
