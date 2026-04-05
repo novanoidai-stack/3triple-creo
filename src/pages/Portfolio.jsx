@@ -90,7 +90,7 @@ export default function Portfolio() {
     <PageTransition>
       <SEO
         title="Portafolio | Trabajos Reales · 3pleL Barbería Madrid"
-        description="Galería de cortes reales: Fade, afro, diseño de barba. Formación Blend School. Barbería de autor en Hortaleza, Madrid."
+        description="Galería de cortes reales: Fade, afro, diseño de barba. Formación Blesson. Barbería de autor en Hortaleza, Madrid."
         canonical="https://blendz-leo.com/portafolio"
       />
 
@@ -179,7 +179,7 @@ export default function Portfolio() {
             marginBottom: '0.5rem',
             lineHeight: 1.1,
           }}>
-            Blend School
+            Blesson
           </h2>
           <p style={{
             color: 'rgba(255,255,255,0.4)',

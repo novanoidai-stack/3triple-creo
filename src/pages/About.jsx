@@ -7,7 +7,7 @@ export default function About() {
     <PageTransition>
       <SEO
         title="Firma Personal | Blendz Leo — Barbero de Autor Madrid"
-        description="Conoce a Leo, barbero certificado Blend School Cum Laude en Hortaleza, Madrid. Experto en Skin Fade, visagismo y corte de autor. Motilla del Palancar 33."
+        description="Conoce a Leo, barbero certificado Blesson en Hortaleza, Madrid. Experto en Skin Fade, visagismo y corte de autor. Motilla del Palancar 33."
         canonical="https://blendz-leo.com/perfil"
       />
       <section className="container" style={{ padding: '6rem 0' }}>

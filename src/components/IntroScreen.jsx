@@ -32,7 +32,7 @@ export default function IntroScreen() {
           justifyContent: 'center',
           zIndex: 9999,
           flexDirection: 'column',
-          gap: '1.5rem',
+          gap: '0.75rem',
         }}
       >
         {/* Logo */}
@@ -45,7 +45,7 @@ export default function IntroScreen() {
             src="/assets/images/WhatsApp Image 2026-04-01 at 20.30.03.jpeg"
             alt="3pleL"
             style={{
-              height: 'clamp(120px, 22vw, 200px)',
+              height: 'clamp(200px, 38vw, 340px)',
               objectFit: 'contain',
               filter: 'brightness(1.05)',
             }}

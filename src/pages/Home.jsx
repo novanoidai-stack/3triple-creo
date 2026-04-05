@@ -82,7 +82,7 @@ export default function Home() {
     <PageTransition>
       <SEO
         title="Barbería Premium Madrid Hortaleza · Skin Fade & Visagismo"
-        description="Blendz Leo: barbería de autor en Hortaleza, Madrid. Especialistas en Skin Fade, diseño de barba y visagismo. Formación Blend School Cum Laude. 20% dto primer corte."
+        description="3pleL: barbería de autor en Hortaleza, Madrid. Especialistas en Skin Fade, diseño de barba y visagismo. Formación Blesson. 20% dto primer corte."
         canonical="https://blendz-leo.com"
       />
       <Helmet>
@@ -285,7 +285,7 @@ export default function Home() {
         {[
           { value: 500, suffix: '+', label: 'Clientes Satisfechos', isCount: true },
           { value: '5.0', prefix: '★ ', label: 'Valoración Media', isCount: false },
-          { value: 'Formación', label: 'Blend School Cert.', isCount: false },
+          { value: 'Formación', label: 'Blesson Cert.', isCount: false },
           { value: 'Madrid', label: 'Hortaleza · Motilla 33', isCount: false },
         ].map((stat, i) => (
           <div key={i} style={{ textAlign: 'center' }}>
