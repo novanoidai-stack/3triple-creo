@@ -151,7 +151,7 @@ export default function Home() {
             <img
               src="/assets/images/WhatsApp Image 2026-04-01 at 20.30.03.jpeg"
               alt="3pleL — Barbería de Autor Madrid"
-              style={{ height: '90px', objectFit: 'contain', filter: 'brightness(1.1)' }}
+              style={{ height: 'clamp(120px, 18vw, 180px)', objectFit: 'contain', filter: 'brightness(1.1)' }}
             />
           </motion.div>
 

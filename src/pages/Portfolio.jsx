@@ -2,31 +2,22 @@ import { motion } from 'framer-motion';
 import PageTransition from '../components/PageTransition';
 import SEO from '../components/SEO';
 
+// Solo fotos profesionales de cortes reales
 const haircuts = [
-  "WhatsApp Image 2026-04-05 at 16.02.03.jpeg",
-  "WhatsApp Image 2026-04-05 at 16.02.03 (1).jpeg",
-  "WhatsApp Image 2026-04-05 at 16.02.03 (2).jpeg",
-  "WhatsApp Image 2026-04-05 at 16.02.03 (3).jpeg",
-  "WhatsApp Image 2026-04-05 at 16.02.03 (4).jpeg",
-  "WhatsApp Image 2026-04-05 at 16.16.04.jpeg",
-  "WhatsApp Image 2026-04-05 at 16.16.04 (1).jpeg",
-  "WhatsApp Image 2026-04-05 at 16.16.04 (2).jpeg",
-  "WhatsApp Image 2026-04-05 at 16.16.04 (3).jpeg",
-  "WhatsApp Image 2026-04-01 at 20.33.26.jpeg",
-  "WhatsApp Image 2026-04-01 at 20.33.26 (1).jpeg",
-  "WhatsApp Image 2026-04-01 at 20.33.26 (2).jpeg",
-  "WhatsApp Image 2026-04-01 at 20.33.26 (3).jpeg",
-  "WhatsApp Image 2026-04-01 at 20.33.26 (4).jpeg",
-  "WhatsApp Image 2026-04-01 at 20.36.59.jpeg",
-  "WhatsApp Image 2026-04-01 at 20.36.59 (1).jpeg",
-  "WhatsApp Image 2026-04-01 at 20.36.59 (2).jpeg",
+  "WhatsApp Image 2026-04-05 at 16.16.04 (1).jpeg", // curly + fade, estudio limpio
+  "WhatsApp Image 2026-04-05 at 16.16.04 (2).jpeg", // textured cut, fondo blanco
+  "WhatsApp Image 2026-04-01 at 20.33.26.jpeg",     // afro fade, espejo estudio
+  "WhatsApp Image 2026-04-01 at 20.33.26 (2).jpeg", // low fade close-up
+  "WhatsApp Image 2026-04-05 at 16.16.04.jpeg",     // fade lateral barbería
+  "WhatsApp Image 2026-04-05 at 16.16.04 (3).jpeg", // fade limpio
 ];
 
+// Fotos de formación: diploma, evento Bless School
 const formacion = [
-  "WhatsApp Image 2026-04-01 at 20.39.44.jpeg",
-  "WhatsApp Image 2026-04-01 at 20.40.03.jpeg",
-  "barber_profile.png",
-  "WhatsApp Image 2026-04-01 at 20.30.03 (1).jpeg",
+  "WhatsApp Image 2026-04-05 at 16.02.03 (1).jpeg", // evento, barbero en escenario
+  "WhatsApp Image 2026-04-05 at 16.02.03 (2).jpeg", // diploma en mano
+  "WhatsApp Image 2026-04-01 at 20.33.26 (1).jpeg", // certificado Bless School
+  "WhatsApp Image 2026-04-01 at 20.33.26 (4).jpeg", // foto grupal Bless School
 ];
 
 const galleryVariants = {

@@ -18,7 +18,7 @@ export default function IntroScreen() {
         initial={{ opacity: 1 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 0.5, delay: 2.2 }}
+        transition={{ duration: 0.6, delay: 2.4 }}
         onAnimationComplete={() => {
           sessionStorage.setItem('3tc_intro', '1');
           setShow(false);
@@ -32,49 +32,42 @@ export default function IntroScreen() {
           justifyContent: 'center',
           zIndex: 9999,
           flexDirection: 'column',
-          gap: '1rem',
+          gap: '1.5rem',
         }}
       >
+        {/* Logo */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.88 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          style={{
-            fontFamily: "'Oswald', sans-serif",
-            fontSize: 'clamp(2.5rem, 7vw, 4rem)',
-            fontWeight: 700,
-            letterSpacing: '4px',
-            color: '#ffffff',
-            textTransform: 'uppercase',
-          }}
+          transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
         >
-          3Triple Creo
+          <img
+            src="/assets/images/WhatsApp Image 2026-04-01 at 20.30.03.jpeg"
+            alt="3pleL"
+            style={{
+              height: 'clamp(120px, 22vw, 200px)',
+              objectFit: 'contain',
+              filter: 'brightness(1.05)',
+            }}
+          />
         </motion.div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          style={{
-            fontFamily: "'Great Vibes', cursive",
-            fontSize: 'clamp(1.5rem, 3vw, 2rem)',
-            color: '#ffb6c1',
-          }}
-        >
-          Blendz Leo
-        </motion.div>
+
+        {/* Línea divisora */}
         <motion.div
           initial={{ width: 0 }}
-          animate={{ width: '80px' }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          animate={{ width: '60px' }}
+          transition={{ duration: 0.7, delay: 0.7 }}
           style={{ height: '1px', background: '#ffb6c1' }}
         />
+
+        {/* Subtítulo */}
         <motion.p
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 0.5, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.2 }}
+          transition={{ duration: 0.6, delay: 1.1 }}
           style={{
             fontFamily: "'Oswald', sans-serif",
-            fontSize: '0.65rem',
+            fontSize: '0.6rem',
             letterSpacing: '5px',
             textTransform: 'uppercase',
             color: '#ffb6c1',
