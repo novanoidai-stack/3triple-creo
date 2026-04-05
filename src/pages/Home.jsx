@@ -120,244 +120,171 @@ export default function Home() {
         {/* Particles full hero */}
         <ParticleField density="medium" />
 
-        {/* Content — 2 columnas */}
+        {/* Content — centrado */}
         <div style={{
           width: '100%',
-          maxWidth: '1200px',
+          maxWidth: '820px',
+          margin: '0 auto',
           position: 'relative',
           zIndex: 10,
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '4rem',
-          alignItems: 'center',
-          paddingBottom: '4rem',
-        }}
-          className="hero-grid"
-        >
-          {/* ── Columna izquierda ── */}
-          <div>
-            {/* Tag */}
-            <motion.div
-              variants={fadeUp}
-              custom={0.1}
-              initial="hidden"
-              animate="visible"
-              style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '2rem' }}
-            >
-              <div className="animate-pulse" style={{
-                width: '7px', height: '7px', borderRadius: '50%', background: '#ffb6c1', flexShrink: 0,
-              }} />
-              <span style={{
-                fontFamily: "'Oswald', sans-serif",
-                fontSize: '0.7rem',
-                letterSpacing: '4px',
-                textTransform: 'uppercase',
-                color: '#ffb6c1',
-              }}>
-                Barbería de Autor · Madrid, Hortaleza
-              </span>
-            </motion.div>
-
-            {/* Logo principal */}
-            <motion.div variants={fadeUp} custom={0.15} initial="hidden" animate="visible"
-              style={{ marginBottom: '1.5rem' }}>
-              <img
-                src="/assets/images/WhatsApp Image 2026-04-01 at 20.30.03.jpeg"
-                alt="3pleL — Barbería de Autor Madrid"
-                style={{ height: 'clamp(120px, 18vw, 180px)', objectFit: 'contain', filter: 'brightness(1.1)' }}
-              />
-            </motion.div>
-
-            {/* Eslogan secundario */}
-            <motion.div variants={fadeUp} custom={0.28} initial="hidden" animate="visible">
-              <p style={{
-                fontFamily: "'Oswald', sans-serif",
-                fontSize: 'clamp(0.85rem, 2vw, 1.1rem)',
-                letterSpacing: '6px',
-                textTransform: 'uppercase',
-                color: 'rgba(255,255,255,0.45)',
-                marginBottom: '2rem',
-              }}>
-                Estilo y precisión
-              </p>
-            </motion.div>
-
-            {/* Subtitle */}
-            <motion.p
-              variants={fadeUp}
-              custom={0.42}
-              initial="hidden"
-              animate="visible"
-              style={{
-                fontFamily: "'Outfit', sans-serif",
-                fontSize: '1rem',
-                color: 'rgba(255,255,255,0.45)',
-                maxWidth: '420px',
-                lineHeight: 1.8,
-                marginBottom: '2.5rem',
-              }}
-            >
-              Maestría en{' '}
-              <strong style={{ color: '#ffffff', fontWeight: 600 }}>Fade, diseño de barba y afro</strong>.
-              {' '}El estudio donde tu imagen se convierte en{' '}
-              <strong style={{ color: '#ffffff', fontWeight: 600 }}>una obra de autor</strong>.
-            </motion.p>
-
-            {/* Promo badge */}
-            <motion.div
-              variants={fadeUp}
-              custom={0.55}
-              initial="hidden"
-              animate="visible"
-              style={{ marginBottom: '2rem', display: 'flex', alignItems: 'center', gap: '12px' }}
-            >
-              <span style={{
-                background: 'var(--pink)',
-                color: '#000',
-                padding: '0.3rem 0.8rem',
-                fontSize: '0.7rem',
-                fontFamily: "'Oswald', sans-serif",
-                fontWeight: 700,
-                letterSpacing: '2px',
-                textTransform: 'uppercase',
-              }}>
-                PRIMER CORTE
-              </span>
-              <span style={{
-                color: '#ffffff',
-                fontSize: '0.9rem',
-                fontFamily: "'Oswald', sans-serif",
-                letterSpacing: '2px',
-              }}>
-                20% DE DESCUENTO
-              </span>
-            </motion.div>
-
-            {/* CTAs */}
-            <motion.div
-              variants={fadeUp}
-              custom={0.65}
-              initial="hidden"
-              animate="visible"
-              style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', alignItems: 'center' }}
-            >
-              <button
-                className="btn-primary"
-                onClick={() => navigate('/contacto')}
-              >
-                Reservar Cita →
-              </button>
-              <button
-                className="btn-ghost"
-                onClick={() => navigate('/portafolio')}
-              >
-                Ver Trabajos
-              </button>
-            </motion.div>
-          </div>
-
-          {/* ── Columna derecha: foto ── */}
+          textAlign: 'center',
+          paddingBottom: '5rem',
+        }}>
+          {/* Tag */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            style={{ position: 'relative' }}
+            variants={fadeUp}
+            custom={0.1}
+            initial="hidden"
+            animate="visible"
+            style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.6rem', marginBottom: '2.5rem' }}
           >
-            {/* Marco con foto */}
-            <div style={{
-              position: 'relative',
-              aspectRatio: '3/4',
-              borderRadius: '4px',
-              overflow: 'hidden',
-              border: '1px solid rgba(255,182,193,0.12)',
-            }}>
-              <img
-                src="/assets/images/barber_profile.png"
-                alt="3pleL — Leo, barbero de autor en Madrid"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  objectPosition: 'top center',
-                  filter: 'contrast(1.08) saturate(0.9)',
-                }}
-                onError={(e) => {
-                  e.currentTarget.src = '/assets/images/WhatsApp Image 2026-04-05 at 16.16.04 (1).jpeg';
-                }}
-              />
-              {/* Gradiente inferior */}
-              <div style={{
-                position: 'absolute',
-                bottom: 0,
-                left: 0,
-                right: 0,
-                height: '40%',
-                background: 'linear-gradient(to top, rgba(5,5,5,0.75), transparent)',
-              }} />
-              {/* Texto inferior */}
-              <div style={{
-                position: 'absolute',
-                bottom: '1.5rem',
-                left: '1.5rem',
-              }}>
-                <p style={{
-                  fontFamily: "'Oswald', sans-serif",
-                  fontSize: '0.6rem',
-                  letterSpacing: '4px',
-                  textTransform: 'uppercase',
-                  color: 'rgba(255,182,193,0.7)',
-                  marginBottom: '0.2rem',
-                }}>
-                  Formación Blesson
-                </p>
-                <p style={{
-                  fontFamily: "'Playfair Display', serif",
-                  fontStyle: 'italic',
-                  fontSize: '1.1rem',
-                  color: '#fff',
-                }}>
-                  Leo · Hortaleza, Madrid
-                </p>
-              </div>
-            </div>
-
-            {/* Badge flotante */}
-            <div style={{
-              position: 'absolute',
-              top: '-14px',
-              right: '-14px',
-              background: 'linear-gradient(135deg, #cca43b, #f3d47d)',
-              color: '#000',
-              padding: '0.5rem 1.1rem',
+            <div className="animate-pulse" style={{
+              width: '7px', height: '7px', borderRadius: '50%', background: '#ffb6c1', flexShrink: 0,
+            }} />
+            <span style={{
               fontFamily: "'Oswald', sans-serif",
-              fontWeight: 700,
-              fontSize: '0.65rem',
-              letterSpacing: '2px',
+              fontSize: '0.7rem',
+              letterSpacing: '4px',
               textTransform: 'uppercase',
-              boxShadow: '0 4px 20px rgba(204,164,59,0.3)',
+              color: '#ffb6c1',
             }}>
-              FORMACIÓN
-            </div>
-
-            {/* Glow rosa */}
-            <div style={{
-              position: 'absolute',
-              bottom: '-40px',
-              left: '-40px',
-              width: '220px',
-              height: '220px',
-              background: 'radial-gradient(circle, rgba(255,107,157,0.1), transparent 70%)',
-              pointerEvents: 'none',
+              Barbería de Autor · Madrid, Hortaleza
+            </span>
+            <div className="animate-pulse" style={{
+              width: '7px', height: '7px', borderRadius: '50%', background: '#ffb6c1', flexShrink: 0,
             }} />
           </motion.div>
-        </div>
 
-        <style>{`
-          @media (max-width: 768px) {
-            .hero-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
-            .hero-grid > div:last-child { display: none; }
-          }
-        `}</style>
+          {/* Logo principal */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 1.1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            style={{ marginBottom: '1rem' }}
+          >
+            <img
+              src="/assets/images/WhatsApp Image 2026-04-01 at 20.30.03.jpeg"
+              alt="3pleL — Barbería de Autor Madrid"
+              style={{ height: 'clamp(130px, 20vw, 210px)', objectFit: 'contain', filter: 'brightness(1.1)' }}
+            />
+          </motion.div>
+
+          {/* Autor */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+            style={{ marginBottom: '1.2rem' }}
+          >
+            <p style={{
+              fontFamily: "'Great Vibes', cursive",
+              fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
+              color: 'rgba(255,182,193,0.65)',
+              lineHeight: 1,
+            }}>
+              by Blendz Leo
+            </p>
+          </motion.div>
+
+          {/* Línea decorativa animada */}
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: '80px' }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            style={{ height: '1px', background: 'linear-gradient(90deg, transparent, #ffb6c1, transparent)', margin: '0 auto 2rem' }}
+          />
+
+          {/* Eslogan */}
+          <motion.p
+            variants={fadeUp}
+            custom={0.5}
+            initial="hidden"
+            animate="visible"
+            style={{
+              fontFamily: "'Oswald', sans-serif",
+              fontSize: 'clamp(0.75rem, 1.5vw, 0.95rem)',
+              letterSpacing: '6px',
+              textTransform: 'uppercase',
+              color: 'rgba(255,255,255,0.35)',
+              marginBottom: '2rem',
+            }}
+          >
+            Estilo y precisión
+          </motion.p>
+
+          {/* Subtitle */}
+          <motion.p
+            variants={fadeUp}
+            custom={0.6}
+            initial="hidden"
+            animate="visible"
+            style={{
+              fontFamily: "'Outfit', sans-serif",
+              fontSize: '1.05rem',
+              color: 'rgba(255,255,255,0.45)',
+              maxWidth: '520px',
+              margin: '0 auto 2.5rem',
+              lineHeight: 1.85,
+            }}
+          >
+            Maestría en{' '}
+            <strong style={{ color: '#ffffff', fontWeight: 600 }}>Fade, diseño de barba y afro</strong>.
+            {' '}El estudio donde tu imagen se convierte en{' '}
+            <strong style={{ color: '#ffffff', fontWeight: 600 }}>una obra de autor</strong>.
+          </motion.p>
+
+          {/* Promo badge */}
+          <motion.div
+            variants={fadeUp}
+            custom={0.7}
+            initial="hidden"
+            animate="visible"
+            style={{ marginBottom: '2.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px' }}
+          >
+            <span style={{
+              background: 'var(--pink)',
+              color: '#000',
+              padding: '0.3rem 0.8rem',
+              fontSize: '0.7rem',
+              fontFamily: "'Oswald', sans-serif",
+              fontWeight: 700,
+              letterSpacing: '2px',
+              textTransform: 'uppercase',
+            }}>
+              PRIMER CORTE
+            </span>
+            <span style={{
+              color: '#ffffff',
+              fontSize: '0.9rem',
+              fontFamily: "'Oswald', sans-serif",
+              letterSpacing: '2px',
+            }}>
+              20% DE DESCUENTO
+            </span>
+          </motion.div>
+
+          {/* CTAs */}
+          <motion.div
+            variants={fadeUp}
+            custom={0.8}
+            initial="hidden"
+            animate="visible"
+            style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' }}
+          >
+            <button
+              className="btn-primary"
+              onClick={() => navigate('/contacto')}
+            >
+              Reservar Cita →
+            </button>
+            <button
+              className="btn-ghost"
+              onClick={() => navigate('/portafolio')}
+            >
+              Ver Trabajos
+            </button>
+          </motion.div>
+        </div>
 
         {/* Scroll indicator */}
         <div style={{
