@@ -268,7 +268,7 @@ function CartDrawer({ cart, onClose, onQtyChange }) {
             Enviar pedido por WhatsApp
           </motion.button>
 
-          <p style={{ color: 'rgba(255,255,255,0.25)', fontFamily: "'Outfit', sans-serif", fontSize: '0.72rem', textAlign: 'center', lineHeight: 1.5 }}>
+          <p style={{ color: 'rgba(255,255,255,0.45)', fontFamily: "'Outfit', sans-serif", fontSize: '0.72rem', textAlign: 'center', lineHeight: 1.5 }}>
             Leo confirmará tu pedido y te lo entrega en tu próxima cita.
           </p>
         </div>

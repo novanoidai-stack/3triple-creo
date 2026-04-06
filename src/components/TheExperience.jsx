@@ -99,16 +99,19 @@ export default function TheExperience() {
                   borderBottom: i < steps.length - 1 ? '1px solid rgba(255,182,193,0.06)' : 'none',
                   opacity: activeStep === i ? 1 : 0.35,
                   transition: 'opacity 0.4s ease',
+                  willChange: 'opacity',
                 }}
               >
                 <div style={{
                   fontFamily: "'Playfair Display', serif",
                   fontSize: '3.5rem',
-                  color: activeStep === i ? '#ffb6c1' : 'rgba(255,182,193,0.4)',
+                  color: '#ffb6c1',
                   lineHeight: 1,
                   fontStyle: 'italic',
                   minWidth: '65px',
-                  transition: 'color 0.4s ease',
+                  opacity: activeStep === i ? 1 : 0.4,
+                  transition: 'opacity 0.4s ease',
+                  willChange: 'opacity',
                 }}>
                   {step.number}
                 </div>
@@ -119,8 +122,10 @@ export default function TheExperience() {
                     letterSpacing: '2px',
                     textTransform: 'uppercase',
                     marginBottom: '0.7rem',
-                    color: activeStep === i ? '#ffffff' : 'rgba(255,255,255,0.6)',
-                    transition: 'color 0.4s ease',
+                    color: '#ffffff',
+                    opacity: activeStep === i ? 1 : 0.6,
+                    transition: 'opacity 0.4s ease',
+                    willChange: 'opacity',
                   }}>
                     {step.title}
                   </h3>

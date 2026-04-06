@@ -286,7 +286,7 @@ export default function Home() {
               fontSize: 'clamp(0.75rem, 1.5vw, 0.95rem)',
               letterSpacing: '6px',
               textTransform: 'uppercase',
-              color: 'rgba(255,255,255,0.35)',
+              color: 'rgba(255,255,255,0.55)',
               marginBottom: '2rem',
             }}
           >
@@ -415,7 +415,7 @@ export default function Home() {
             fontSize: '0.6rem',
             letterSpacing: '4px',
             textTransform: 'uppercase',
-            color: 'rgba(255,255,255,0.35)',
+            color: 'rgba(255,255,255,0.55)',
           }}>
             Scroll para descubrir
           </span>
@@ -601,7 +601,7 @@ export default function Home() {
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
               {['Barbería Madrid', 'Skin Fade Hortaleza', 'Barbero Premium Madrid', 'Diseño de Barba Madrid'].map((item) => (
-                <li key={item} style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.25)' }}>{item}</li>
+                <li key={item} style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.45)' }}>{item}</li>
               ))}
             </ul>
           </div>
@@ -615,7 +615,7 @@ export default function Home() {
           flexWrap: 'wrap',
           gap: '1rem',
         }}>
-          <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.25)' }}>
+          <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.45)' }}>
             © 2026 Blendz Leo Studio · Madrid, España
           </p>
           <span style={{
