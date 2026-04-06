@@ -1,4 +1,5 @@
-import { Routes, Route, useLocation, Suspense, lazy } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { Suspense, lazy } from 'react';
 import { AnimatePresence } from 'framer-motion';
 
 import Navbar from './components/Navbar';
