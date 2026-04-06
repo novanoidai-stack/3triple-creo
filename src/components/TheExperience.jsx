@@ -160,16 +160,17 @@ export default function TheExperience() {
               justifyContent: 'center',
             }}>
               <img
-                src="/assets/images/barber_profile.png"
-                alt="Blendz Leo — Barbero de Autor Madrid Hortaleza"
+                src="/assets/images/WhatsApp Image 2026-04-05 at 16.16.04 (1).jpeg"
+                alt="3pleL — Fade y corte de autor, Hortaleza Madrid"
+                loading="lazy"
+                width="400"
+                height="533"
                 style={{
                   width: '100%',
                   height: '100%',
                   objectFit: 'cover',
-                  filter: 'contrast(1.1) saturate(0.85)',
-                }}
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
+                  objectPosition: 'top center',
+                  filter: 'contrast(1.08) saturate(0.85)',
                 }}
               />
 

@@ -27,6 +27,17 @@
     <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css" /></noscript>
+    <!-- font-display:swap override para FA brands (evita FOIT) -->
+    <style>
+      @font-face {
+        font-family: 'Font Awesome 6 Brands';
+        font-display: swap;
+        src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-brands-400.woff2') format('woff2'),
+             url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-brands-400.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
     <!-- Preload LCP: logo del hero -->
     <link rel="preload" as="image" href="/assets/images/WhatsApp%20Image%202026-04-01%20at%2020.30.03.jpeg" />
     <title>3pleL | Barbería de Autor Madrid Hortaleza</title>

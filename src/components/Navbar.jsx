@@ -103,7 +103,7 @@ export default function Navbar() {
                   ? '#ffb6c1'
                   : isActive
                   ? '#ffffff'
-                  : 'rgba(255,255,255,0.45)',
+                  : 'rgba(255,255,255,0.7)',
                 position: 'relative',
                 transition: 'color 0.3s',
                 paddingBottom: '2px',

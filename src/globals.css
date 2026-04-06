@@ -89,7 +89,7 @@ a {
   gap: 0.8rem;
   border: none;
   cursor: pointer;
-  transition: all 0.3s var(--ease-smooth);
+  transition: transform 0.3s var(--ease-smooth), background-color 0.3s var(--ease-smooth);
   clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%);
   text-decoration: none;
 }
