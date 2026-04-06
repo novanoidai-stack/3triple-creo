@@ -20,15 +20,17 @@ function App() {
       <CustomCursor />
       <IntroScreen />
       <Navbar />
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Home />} />
-          <Route path="/perfil" element={<About />} />
-          <Route path="/portafolio" element={<Portfolio />} />
-          <Route path="/productos" element={<Products />} />
-          <Route path="/contacto" element={<Booking />} />
-        </Routes>
-      </AnimatePresence>
+      <main>
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home />} />
+            <Route path="/perfil" element={<About />} />
+            <Route path="/portafolio" element={<Portfolio />} />
+            <Route path="/productos" element={<Products />} />
+            <Route path="/contacto" element={<Booking />} />
+          </Routes>
+        </AnimatePresence>
+      </main>
       <FloatingContact />
     </>
   );

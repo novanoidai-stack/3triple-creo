@@ -6,6 +6,7 @@ export default function FloatingContact() {
       href="https://wa.me/34623433448?text=Hola%20Leo,%20vengo%20de%20tu%20web"
       target="_blank"
       rel="noopener noreferrer"
+      aria-label="Contactar con Leo por WhatsApp"
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
       whileHover={{ scale: 1.1 }}

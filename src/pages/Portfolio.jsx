@@ -62,6 +62,9 @@ function GalleryGrid({ images, ratio = '4/5' }) {
           <img
             src={`/assets/images/${img}`}
             alt="3pleL Barbería Madrid — Fade y corte de autor"
+            loading="lazy"
+            width="400"
+            height="500"
             style={{
               width: '100%',
               height: '100%',

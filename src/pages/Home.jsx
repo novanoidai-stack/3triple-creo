@@ -140,7 +140,8 @@ export default function Home() {
             }}
           >
             <img src="/assets/images/WhatsApp Image 2026-04-05 at 16.16.04 (1).jpeg"
-              alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', filter: 'grayscale(30%) contrast(1.05)', opacity: 0.7 }} />
+              alt="" loading="lazy" width="220" height="275"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', filter: 'grayscale(30%) contrast(1.05)', opacity: 0.7 }} />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 40%, rgba(5,5,5,0.6))' }} />
           </motion.div>
 
@@ -162,7 +163,8 @@ export default function Home() {
             }}
           >
             <img src="/assets/images/WhatsApp Image 2026-04-05 at 16.16.04 (2).jpeg"
-              alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', filter: 'grayscale(30%) contrast(1.05)', opacity: 0.6 }} />
+              alt="" loading="lazy" width="170" height="213"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', filter: 'grayscale(30%) contrast(1.05)', opacity: 0.6 }} />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 40%, rgba(5,5,5,0.6))' }} />
           </motion.div>
 
@@ -184,7 +186,8 @@ export default function Home() {
             }}
           >
             <img src="/assets/images/WhatsApp Image 2026-04-01 at 20.33.26.jpeg"
-              alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', filter: 'grayscale(30%) contrast(1.05)', opacity: 0.55 }} />
+              alt="" loading="lazy" width="155" height="194"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', filter: 'grayscale(30%) contrast(1.05)', opacity: 0.55 }} />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 40%, rgba(5,5,5,0.6))' }} />
           </motion.div>
         </div>
@@ -240,6 +243,9 @@ export default function Home() {
             <img
               src="/assets/images/WhatsApp Image 2026-04-01 at 20.30.03.jpeg"
               alt="3pleL — Barbería de Autor Madrid"
+              fetchpriority="high"
+              width="210"
+              height="210"
               style={{ height: 'clamp(130px, 20vw, 210px)', objectFit: 'contain', filter: 'brightness(1.1)' }}
             />
           </motion.div>
@@ -346,33 +352,44 @@ export default function Home() {
             animate="visible"
             style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' }}
           >
-            <motion.button
-              className="btn-primary"
-              onClick={() => navigate('/contacto')}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-              style={{
-                fontSize: '0.9rem',
-                padding: '1.2rem 3rem',
-                letterSpacing: '3px',
-                boxShadow: '0 0 30px rgba(255,107,157,0.35), 0 0 60px rgba(255,107,157,0.15)',
-                animation: 'heroBtnPulse 3s ease-in-out infinite',
-              }}
-            >
-              Reservar Cita →
-            </motion.button>
+            <div style={{ position: 'relative', display: 'inline-block' }}>
+              {/* Anillo pulsante — solo transform/opacity, compositor-safe */}
+              <span style={{
+                position: 'absolute',
+                inset: '-6px',
+                borderRadius: '2px',
+                border: '2px solid rgba(255,107,157,0.5)',
+                animation: 'heroBtnRing 2.4s ease-out infinite',
+                pointerEvents: 'none',
+              }} />
+              <motion.button
+                className="btn-primary"
+                onClick={() => navigate('/contacto')}
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+                style={{
+                  fontSize: '0.9rem',
+                  padding: '1.2rem 3rem',
+                  letterSpacing: '3px',
+                  position: 'relative',
+                  zIndex: 1,
+                }}
+              >
+                Reservar Cita →
+              </motion.button>
+              <style>{`
+                @keyframes heroBtnRing {
+                  0% { transform: scale(1); opacity: 0.8; }
+                  100% { transform: scale(1.35); opacity: 0; }
+                }
+              `}</style>
+            </div>
             <button
               className="btn-ghost"
               onClick={() => navigate('/portafolio')}
             >
               Ver Trabajos
             </button>
-            <style>{`
-              @keyframes heroBtnPulse {
-                0%, 100% { box-shadow: 0 0 30px rgba(255,107,157,0.35), 0 0 60px rgba(255,107,157,0.15); }
-                50% { box-shadow: 0 0 45px rgba(255,107,157,0.6), 0 0 90px rgba(255,107,157,0.25); }
-              }
-            `}</style>
           </motion.div>
         </div>
 
